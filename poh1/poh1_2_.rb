@@ -1,0 +1,1 @@
+n,d=gets.split.map(&:to_i);v=n.times.map{gets.to_i}.sort;d.times{m=gets.to_i;r=j=0;k=((0...v.size).bsearch{|i|m-v[0]<v[i]}||v.size)-1;while r<m&&j<k&&v[j]+v[j+1]<=m do k-=1 while v[j]+v[k]>m;r=v[j]+v[k] if r<v[j]+v[k];j+=1 end;p r}
