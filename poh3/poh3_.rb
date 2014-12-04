@@ -1,0 +1,1 @@
+M=gets.to_i;N=gets.to_i;num=[0]*N;cost=[0]*N;total=0;N.times{|j|q,r=gets.split.map(&:to_i);total+=q;num[j]=q;cost[j]=r};bag=[0]+[-1]*total;N.times{|j|total.downto(num[j]){|i|bag[i]=bag[i-num[j]]+cost[j]if bag[i-num[j]]>=0&&(bag[i]<0||bag[i]>bag[i-num[j]]+cost[j])}};j=-1;M.upto(total){|i|j=bag[i]if j<0||(bag[i]>=0&&j>bag[i])};p j
