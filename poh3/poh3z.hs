@@ -1,4 +1,4 @@
-#!/usr/bin/runhugs
+#!/usr/bin/env runghc
 main2 n
 	| n==60 = 6600
 	| n==250 = 23072
