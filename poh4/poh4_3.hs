@@ -1,5 +1,7 @@
 #!/usr/bin/env runghc
 --import Debug.Trace
+--debug code and seq (strict evaluation) from http://www.geocities.jp/m_hiroi/func/haskell05.html
+
 import Control.Applicative
 import Control.Monad
 
