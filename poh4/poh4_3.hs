@@ -1,18 +1,38 @@
 #!/usr/bin/env runghc
+--import Debug.Trace
 import Control.Applicative
 import Control.Monad
-import Data.Array
 
-run::Array Int Int -> Int -> Int -> Int -> Int -> Int
-run a (-1) cur r t = r
-run a i cur r t = run a (i-1) nxt (max r nxt) t
-	where
-		nxt = cur + a!i - a!(i+t)
+-- 2.03s
+run::[Int] -> [Int] -> Int -> Int -> Int
+run a b r cur
+	| null b = r
+	| otherwise =
+		let nxt = cur + (head b) - (head a) in
+		nxt `seq` run (tail a) (tail b) (max r nxt) nxt
 main = do
 	[t,n] <- map (read :: String -> Int) . words <$> getLine
 	a <- replicateM n (readLn :: IO Int)
-	let s = sum (drop (n-t) a)
-	putStrLn $ show $ run (listArray (0,n-1) a) (n-1-t) s s t
+	let s = sum (take t a)
+	putStrLn $ show $ run a (drop t a) s s
+
+{-
+-- 1.99s
+-- refer to https://gist.github.com/tanakh/7764127
+import qualified Data.Vector.Unboxed as V
+import Data.Vector.Unboxed ((!))
+main = do
+	[t,n] <- map (read :: String -> Int) . words <$> getLine
+	_a <- replicateM n (readLn :: IO Int)
+	let s = sum (drop (n-t) _a)
+	let a = V.fromList _a
+	let run i r cur
+		| i==(-1) = r
+		| otherwise =
+			let nxt = cur + a!i - a!(i+t) in
+			nxt `seq` run (i-1) (max r nxt) nxt
+	putStrLn $ show $ run (n-1-t) s s
+-}
 
 {-
 mklist n
