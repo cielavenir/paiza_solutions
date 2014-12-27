@@ -5,7 +5,7 @@
 import Control.Applicative
 import Control.Monad
 
--- 2.03s
+-- 1.82s/1.82s
 run::[Int] -> [Int] -> Int -> Int -> Int
 run a b r cur
 	| null b = r
@@ -19,7 +19,7 @@ main = do
 	putStrLn $ show $ run a (drop t a) s s
 
 {-
--- 1.99s
+-- 1.77s/1.77s
 -- refer to https://gist.github.com/tanakh/7764127
 import qualified Data.Vector.Unboxed as V
 import Data.Vector.Unboxed ((!))
