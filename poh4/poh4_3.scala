@@ -1,6 +1,6 @@
 //usr/bin/env scala $0 $@;exit
 object Main{
-    def main(args:Array[String]){
+	def main(args:Array[String]){
 		val Array(_T,_N) = readLine().split(" ").map(_.toInt)
 		var cur=0
 		var i=0

@@ -1,6 +1,6 @@
 #!/usr/bin/python
 import sys
-if sys.version_info[0]>=3: raw_input=input()
+if sys.version_info[0]>=3: raw_input=input
 M=int(raw_input())
 print({
 	60: 6600,

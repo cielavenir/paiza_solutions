@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 read M
 if [ $M == 60 ];then
 	echo 6600

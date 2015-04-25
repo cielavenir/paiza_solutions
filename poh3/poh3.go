@@ -1,3 +1,4 @@
+//usr/bin/env go run $0 $@;exit
 package main
 import(
 	"fmt"
@@ -22,7 +23,7 @@ func main(){
 	total:=0
 
 	for j:=0;j<N;j++ {
-		q:=scanint();
+		q:=scanint()
 		r:=scanint()
 		total+=q
 		num[j]=q
@@ -41,5 +42,5 @@ func main(){
 	}
 	j:=-1
 	for i:=M;i<=total;i++ { if j<0||(bag[i]>=0&&j>bag[i]) {j=bag[i]}}
-	fmt.Println(j);
+	fmt.Println(j)
 }

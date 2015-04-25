@@ -1,3 +1,4 @@
+//usr/bin/env picoc $0 - $@;exit
 #include <stdio.h>
 int num[50],cost[50];
 int bag[500000];
@@ -8,7 +9,7 @@ int main(){
 	for(total=j=0;j<N;j++){
 		scanf("%d%d",&q,&r);
 		total+=q;
-		num[j]=q,cost[j]=r;
+		num[j]=q;cost[j]=r;
 	}
 	//std::vector<int>bag(total+1);
 	for(i=1;i<=total;i++)bag[i]=-1;
