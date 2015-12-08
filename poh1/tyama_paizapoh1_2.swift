@@ -391,11 +391,48 @@ final public class VaListBuilder {
 
 #endif // _runtime(_ObjC)
 
-func getInt()->Int32{
-	var n:Int32=0
+func getInt()->Int{
+	var n:Int=0
 	withUnsafeMutablePointer(&n){withVaList([COpaquePointer($0)]){vscanf("%d",$0)}}
 	return n
 }
-var	a=getInt(),b=getInt(),c=getInt(),d=getInt()
 
-print(a*d>b*c ? 1 : 2)
+func array_binarysearch(needle:Int,_ haystack:[Int],_ size:Int)->Int{
+	var high = size-1
+	var low = 0
+	var ret = size
+	for ;low <= high; {
+		let probe = (high + low) / 2
+		let comparison = haystack[probe]-needle
+		if comparison <= 0 {
+			low = probe+1
+		}else{
+			ret=high
+			high = probe-1
+		}
+	}
+	return ret
+}
+
+let n=getInt(),d=getInt()
+var _v=[Int](count:1000001,repeatedValue:0)
+var v=[Int](count:n,repeatedValue:0)
+var i=0,j=0,k=0
+for i=0;i<n;++i { _v[getInt()]++ }
+i=0
+for j=0;j<1000001;j++ {
+	for k=0;k<_v[j];k++ { v[i]=j;i++ }
+}
+for i=0;i<d;i++ {
+	var m=getInt()
+	var idx=array_binarysearch(m-v[0],v,n)
+	var r=0
+	var j=0
+	var k=idx-1
+	for ;r<m&&j<k&&v[j]+v[j+1]<=m; {
+		for ;v[j]+v[k]>m; {k--}
+		if r<v[j]+v[k] {r=v[j]+v[k]}
+		j++
+	}
+	print(r)
+}
