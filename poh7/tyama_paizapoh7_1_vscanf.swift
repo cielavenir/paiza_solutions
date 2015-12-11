@@ -1,7 +1,5 @@
 //usr/bin/env xcrun swift $0 $@;exit
 
-import CoreFoundation
-
 #if os(OSX)
 //_runtime(_ObjC)
 
@@ -76,9 +74,13 @@ public func withVaList<R>(builder: VaListBuilder,
   builder.header.reg_save_area = builder.storage._baseAddressIfContiguous
   builder.header.overflow_arg_area
     = builder.storage._baseAddressIfContiguous + _x86_64RegisterSaveWords
-  let result = withUnsafeMutablePointer(&builder.header){(p) in return f(CVaListPointer(_fromUnsafeMutablePointer:p))}
+  let result = withUnsafeMutablePointer(&builder.header) {
+    return f(CVaListPointer(_fromUnsafeMutablePointer:$0))
+  }
 #else
-  let result = withUnsafeMutablePointer(&builder.storage){(p) in return f(CVaListPointer(_fromUnsafeMutablePointer:p))}
+  let result = withUnsafeMutablePointer(&builder.storage) {
+    return f(CVaListPointer(_fromUnsafeMutablePointer:$0))
+  }
 #endif
   _fixLifetime(builder)
   return result
@@ -90,9 +92,9 @@ public func _encodeBitsAsWords<T : CVarArgType>(x: T) -> [Int] {
     count: (sizeof(T.self) + sizeof(Int.self) - 1) / sizeof(Int.self),
     repeatedValue: 0)
   var tmp = x
-  memcpy(UnsafeMutablePointer(result._baseAddressIfContiguous),
-          &tmp,
-          sizeof(T.self))
+  withUnsafeMutablePointer(&tmp) {
+    UnsafeMutablePointer(result._baseAddressIfContiguous).assignFrom($0,count:sizeof(T.self)/sizeof(Int.self))
+  }
   return result
 }
 
@@ -391,7 +393,9 @@ final public class VaListBuilder {
 
 #endif // _runtime(_ObjC)
 
+import CoreFoundation
+
 var n=0;
-for withUnsafeMutablePointer(&n){(pn) in withVaList([COpaquePointer(pn)]){(va) in vscanf("%d",va)}};n>0;n-- {
+for withUnsafeMutablePointer(&n){withVaList([COpaquePointer($0)]){vscanf("%d",$0)}};n>0;n-- {
     print("Ann",terminator:"")
 }
