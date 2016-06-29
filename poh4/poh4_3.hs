@@ -16,7 +16,7 @@ main = do
 	[t,n] <- map (read :: String -> Int) . words <$> getLine
 	a <- replicateM n (readLn :: IO Int)
 	let s = sum (take t a)
-	putStrLn $ show $ run a (drop t a) s s
+	print $ run a (drop t a) s s
 
 {-
 -- 1.77s/1.77s
@@ -33,7 +33,7 @@ main = do
 		| otherwise =
 			let nxt = cur + a!i - a!(i+t) in
 			nxt `seq` run (i-1) (max r nxt) nxt
-	putStrLn $ show $ run (n-1-t) s s
+	print $ run (n-1-t) s s
 -}
 
 {-
