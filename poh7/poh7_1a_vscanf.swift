@@ -1,4 +1,4 @@
-//usr/bin/env xcrun swift $0 $@;exit
+//usr/bin/env swift $0 $@;exit
 
 #if os(OSX)
 //_runtime(_ObjC)
@@ -395,7 +395,13 @@ final public class VaListBuilder {
 
 import CoreFoundation
 
-var n=0;
-for withUnsafeMutablePointer(&n){withVaList([COpaquePointer($0)]){vscanf("%d",$0)}};n>0;n-- {
+func getInt()->Int{
+	var n:Int=0
+	_=withUnsafeMutablePointer(to:&n){withVaList([OpaquePointer($0)]){vscanf("%d",$0)}}
+	return n
+}
+
+var n=getInt()
+for var i in 0..<n {
     print("Ann",terminator:"")
 }

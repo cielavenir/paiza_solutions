@@ -1,2 +1,2 @@
-//usr/bin/env xcrun swift $0 $@;exit
+//usr/bin/env swift $0 $@;exit
 print(Int(readLine()!)!+Int(readLine()!)!)
