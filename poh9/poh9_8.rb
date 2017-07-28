@@ -1,15 +1,16 @@
 #!/usr/bin/ruby
-a=gets.split.join('/')[1..-1].split('/')
+path=gets
+a=path.split.join('/').split('/')
 st=[]
 a.each{|e|
-	if e=='.'
+	if e=='.' || e==''
 	elsif e=='..'
 		st.pop
 	else
 		st<<e
 	end
 }
-puts '/'+st*'/'
+puts (path[0]=='/' ? '/' : '')+st*'/'
 
 __END__
 puts File.expand_path gets.split.join('/')
