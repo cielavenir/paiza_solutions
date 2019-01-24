@@ -13,3 +13,5 @@
 1. https://paiza.jp/logic_summoner
 1. https://paiza.jp/poh/phantom_thief
 1. https://paiza.jp/paizajack
+1. https://paiza.jp/poh/takanotsume
+1. https://paiza.jp/botchi
