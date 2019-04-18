@@ -1,5 +1,7 @@
 ## paiza_solutions
 
+https://paiza.jp/paiza_game_history
+
 1. https://paiza.jp/poh/ec-campaign
 1. https://paiza.jp/poh/paizen
 1. https://paiza.jp/poh/kirishima
