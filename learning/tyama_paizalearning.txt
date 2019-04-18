@@ -1,0 +1,7 @@
+long-table:    B003(12)
+search-island: S001(6)
+max_range:     B001(3)
+tomorrow:      https://yukicoder.me/problems/no/721
+origami:       http://nabetani.sakura.ne.jp/hena/ord18mafovafo
+               python -c 'print "J"*input()' | solution | tr Vm 01
+word-count:    C004(11)
