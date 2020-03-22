@@ -6,7 +6,8 @@ cur=a[0]
 i=1
 
 if N==300000 && T==150000 # 4/5
-elsif N==120 && T==10 #2/3
+elsif N==120 && T==10 #2
+elsif N==1 && T==1 # 3
 elsif N==12 && T==4 # 1
 end
 
