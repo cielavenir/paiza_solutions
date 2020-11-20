@@ -1,7 +1,8 @@
 #include <stdio.h>
+#include <sys/mman.h>
 #define m(a,b) (a<b?a:b)
 ///
-char z[9999999];
+char *z;//[9999999];
 static int input_count=0;
 int get(){
 	int r=0;
@@ -15,7 +16,8 @@ int getC(){
 ///
 int a[300][300][300],accum[300][301];
 int main(){
-	fread(z,1,sizeof(z),stdin);
+	//fread(z,1,sizeof(z),stdin);
+	z=mmap(NULL,9999999,PROT_READ,MAP_PRIVATE,0,0);
 	int h,w,s,t,i,j,k;
 	//scanf("%d%d",&h,&w);getchar();
 	h=get(),w=get();

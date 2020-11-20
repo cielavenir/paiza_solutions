@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <sys/mman.h>
 int array_binarysearch(int needle, int *haystack, int size){
 	int high = size-1;
 	int low = 0;
@@ -15,7 +16,7 @@ int array_binarysearch(int needle, int *haystack, int size){
 	}
 	return ret;
 }
-char z[9999999];
+char *z;//[9999999];
 int _v[1000001],v[500000];
 int get(){
 	static int input_count=0;
@@ -25,7 +26,8 @@ int get(){
 	return r;
 }
 int main(){
-	fread(z,1,sizeof(z),stdin);
+	//fread(z,1,sizeof(z),stdin);
+	z=mmap(NULL,9999999,PROT_READ,MAP_PRIVATE,0,0);
 	int n,d,m,i,j,k,r;
 	n=get(),d=get();
 	for(i=0;i<n;i++)_v[get()]++;
