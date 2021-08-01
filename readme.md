@@ -17,3 +17,4 @@ https://paiza.jp/paiza_game_history
 1. https://paiza.jp/paizajack
 1. https://paiza.jp/poh/takanotsume
 1. https://paiza.jp/botchi
+1. https://paiza.jp/steins_gate/
