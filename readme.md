@@ -2,6 +2,8 @@
 
 https://paiza.jp/paiza_game_history
 
+cgc / codechronicle / oshipro は本リポジトリでは取り扱いません.
+
 1. https://paiza.jp/poh/ec-campaign
 1. https://paiza.jp/poh/paizen
 1. https://paiza.jp/poh/kirishima
@@ -18,3 +20,4 @@ https://paiza.jp/paiza_game_history
 1. https://paiza.jp/poh/takanotsume
 1. https://paiza.jp/botchi
 1. https://paiza.jp/steins_gate/
+1. https://paiza.jp/silver_bullet
