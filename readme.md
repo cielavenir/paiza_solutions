@@ -21,3 +21,4 @@ cgc / codechronicle / oshipro は本リポジトリでは取り扱いません.
 1. https://paiza.jp/botchi
 1. https://paiza.jp/steins_gate/
 1. https://paiza.jp/silver_bullet
+1. https://paiza.jp/code_and_sql
