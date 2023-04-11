@@ -1,0 +1,39 @@
+.container{
+  position: relative;
+  width: 468px;
+  height: 200px;
+  background: transparent url(https://ppg.paiza.jp/html_css/inou_html_css_2/bg.png) no-repeat 0 0;
+  background-size: cover;
+}
+.logo {
+  width:60px;
+  height:60px;
+  position: absolute;
+  border-radius: 50%;
+  z-index: 1;
+}
+.logo:nth-of-type(1){
+  top: 70px;
+  left: 71px;
+  background: #444444;
+}
+.logo:nth-of-type(2){
+  top: 70px;
+  left: 203px;
+  background: #7E5A04;
+}
+.logo:nth-of-type(3){
+  top: 70px;
+  left: 335px;
+  background: #532E02;
+}
+.container::before {
+  display: block;
+  content:"";
+  background: transparent url(https://ppg.paiza.jp/html_css/inou_html_css_2/laurel-wreath_C.png) no-repeat 0 0;
+  background-size: cover;
+  width:468px;
+  height:200px;
+  position: absolute;
+  z-index: 2;
+}
