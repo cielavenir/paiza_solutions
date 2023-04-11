@@ -1,26 +1,26 @@
 #!/usr/bin/ruby
 #https://github.com/marcandre/backports/blob/master/lib/backports/2.0.0/range/bsearch.rb
 unless Range.method_defined? :bsearch
-  class Range
-    def bsearch
-      from = self.begin
-      to   = self.end
+	class Range
+		def bsearch
+			from = self.begin
+			to   = self.end
 
-      to -= 1 if exclude_end?
-      satisfied = nil
-      while from <= to do
-        midpoint = (from + to).div(2)
-        result = yield(midpoint)
-        if result
-          satisfied = midpoint
-          to = midpoint - 1
-        else
-          from = midpoint + 1
-        end
-      end
-      satisfied
-    end
-  end
+			to -= 1 if exclude_end?
+			satisfied = nil
+			while from <= to do
+				midpoint = (from + to).div(2)
+				result = yield(midpoint)
+				if result
+					satisfied = midpoint
+					to = midpoint - 1
+				else
+					from = midpoint + 1
+				end
+			end
+			satisfied
+		end
+	end
 end
 
 S=$<.read.split("\n").map(&:to_i)
