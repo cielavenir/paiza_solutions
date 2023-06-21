@@ -1,3 +1,4 @@
+//usr/bin/env fsharpi $0 $@;exit
 open System
 let M=int(Console.ReadLine())
 let N=int(Console.ReadLine())

@@ -1,3 +1,4 @@
+//usr/bin/env fsharpi $0 $@;exit
 open System
 let arg:String array=Console.ReadLine().Split(' ')
 let W=int(arg.[0])
