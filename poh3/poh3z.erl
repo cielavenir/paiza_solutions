@@ -2,7 +2,7 @@
 -export([main/1]).
 getint() ->
 	X=io:get_line(standard_io, ""),
-	list_to_integer(string:substr(X,1,length(X)-1)).
+	list_to_integer(string:strip(X,right,10)).
 main([_]) ->
 	M=getint(),
 	io:format("~w\n",[if

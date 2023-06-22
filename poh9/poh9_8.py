@@ -6,14 +6,15 @@ def simplify_path(path):
 		if e=='.' or e=='':
 			pass
 		elif e=='..':
-			if st:
+			if st and st[-1]!='..':
 				st.pop()
 			else:
 				#warn('We have Directory Traversal')
-				pass
+				if path[0]!='/': st.append('..')
 		else:
 			st.append(e)
-	return ('/' if path[0]=='/' else '')+'/'.join(st)
+	r=('/' if path[0]=='/' else '')+'/'.join(st)
+	return r if r else '.'
 
 if __name__=='__main__':
 	if True:

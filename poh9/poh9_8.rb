@@ -5,12 +5,17 @@ st=[]
 a.each{|e|
 	if e=='.' || e==''
 	elsif e=='..'
-		st.pop
+		if !st.empty? && st[-1]!='..'
+			st.pop
+		else
+			#warn('We have Directory Traversal')
+			st<<'..' if path[0]!='/'
 	else
 		st<<e
 	end
 }
-puts (path[0]=='/' ? '/' : '')+st*'/'
+r=(path[0]=='/' ? '/' : '')+st*'/'
+puts r.empty? ? '.' : r
 
 __END__
 puts File.expand_path gets.split.join('/')
