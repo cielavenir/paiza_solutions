@@ -11,20 +11,20 @@ int get(){
 int m[100][100];
 int main(){
 	fread(z,1,sizeof(z),stdin);
-	int W=get(),H=get();
-	for(int h=0;h<H;h++){
-		for(int w=0;w<W;w++){
+	int W=get(),H=get(),h,w;
+	for(h=0;h<H;h++){
+		for(w=0;w<W;w++){
 			m[h][w]=get();
 		}
 	}
-	for(int w=0;w<W;w++){
+	for(w=0;w<W;w++){
 		int s=0,h=H-1;
 		for(;h>=0;h--)s+=m[h][w]==1;
 		for(h=H-1;s>0&&h>=0;h--,s--)m[h][w]=1;
 		for(;h>=0;h--)m[h][w]=0;
 	}
-	for(int h=0;h<H;h++){
-		for(int w=0;w<W;w++){
+	for(h=0;h<H;h++){
+		for(w=0;w<W;w++){
 			printf(w<W-1?"%d ":"%d\n",m[h][w]);
 		}
 	}

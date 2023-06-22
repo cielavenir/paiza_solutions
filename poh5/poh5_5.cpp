@@ -9,6 +9,8 @@
 using namespace std;
 typedef vector<vector<int>> vvii;
 
+/// acknowledgement: http://www.geocities.jp/m_hiroi/light/pyalgo28.html ///
+
 #define X 4
 #define Y 3
 enum{

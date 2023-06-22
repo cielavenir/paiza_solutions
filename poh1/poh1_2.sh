@@ -1,5 +1,5 @@
-#!/bin/sh
-#set -e
+#!/bin/bash
+set -eu
 #https://gist.github.com/oliverdaff/6067071
 binary_search(){
 	TARGET=$1
