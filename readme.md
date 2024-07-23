@@ -23,3 +23,7 @@ cgc / codechronicle / oshipro は本リポジトリでは取り扱いません.
 1. https://paiza.jp/silver_bullet
 1. https://paiza.jp/code_and_sql
 1. https://ppg.paiza.jp/inou
+1. https://ppg.paiza.jp/code_review_bingo
+1. https://ppg.paiza.jp/isekai
+1. https://ppg.paiza.jp/proken
+1. https://ppg.paiza.jp/silicon_valley/tour

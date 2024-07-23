@@ -1,0 +1,1 @@
+SELECT bill FROM ordered;

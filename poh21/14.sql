@@ -1,0 +1,1 @@
+SELECT * FROM menu ORDER BY price DESC LIMIT 10;

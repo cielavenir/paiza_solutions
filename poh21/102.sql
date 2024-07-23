@@ -1,0 +1,1 @@
+SELECT residence FROM customer;
