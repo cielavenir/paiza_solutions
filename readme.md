@@ -1,8 +1,8 @@
 ## paiza_solutions
 
-https://paiza.jp/paiza_game_history
+https://paiza.jp/entertainment
 
-cgc / codechronicle / oshipro は本リポジトリでは取り扱いません.
+cgc / codechronicle / oshipro / code_monster は本リポジトリでは取り扱いません.
 
 1. https://paiza.jp/poh/ec-campaign
 1. https://paiza.jp/poh/paizen
@@ -27,3 +27,4 @@ cgc / codechronicle / oshipro は本リポジトリでは取り扱いません.
 1. https://ppg.paiza.jp/isekai
 1. https://ppg.paiza.jp/proken
 1. https://ppg.paiza.jp/silicon_valley/tour
+1. https://ppg.paiza.jp/denno2088
