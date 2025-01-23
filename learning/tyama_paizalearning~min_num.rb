@@ -1,2 +1,2 @@
-#!/bin/sh
-sort -n|head -1
+#!/usr/bin/ruby
+p $<.map(&:to_i).min
